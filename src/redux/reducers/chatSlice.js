@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { server } from "../store";
-import errorHandlerClass from "../../../backend/utils/errorClass";
+// import errorHandlerClass from "../../../backend/utils/errorClass";
 
 
 export const createNewChat = createAsyncThunk(
@@ -71,7 +71,8 @@ export const createGroupChat = createAsyncThunk('createGroupChat', async (formDa
 
     } catch (error) {
         console.error('Action Creator Error:', error);
-        throw new errorHandlerClass("unable to fetch data", 400);
+        // throw new errorHandlerClass("unable to fetch data", 400);
+        throw new Error("Unable to fetch data")
     }
 });
 

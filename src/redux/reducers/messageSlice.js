@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { server } from "../store";
-import errorHandlerClass from "../../../backend/utils/errorClass";
+// import errorHandlerClass from "../../../backend/utils/errorClass";
 
 export const sendMessages = createAsyncThunk('sendMessage', async ({ content, chatId }) => {
     try {
@@ -20,7 +20,7 @@ export const sendMessages = createAsyncThunk('sendMessage', async ({ content, ch
 
         return response.data;
     } catch (error) {
-        throw new errorHandlerClass("unable to fetch data", 400);
+        throw new Error("unable to fetch data");
     }
 });
 
